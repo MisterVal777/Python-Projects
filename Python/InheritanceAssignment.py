@@ -1,17 +1,24 @@
-# class vehicle, all with ' ' are sting values.  Without ' ' are integer values.
+
+# class vehicle, and attributes of vehicle
 class Vehicle:
-	manufactuer = ' '
-	horsepower = ' '
-	fuel_type = ' '
-	saftey_rating = 
+    make = 'Ford'
+    model = 'Raptor'
+    generation = 'Gen 3'
+    color = 'Black'
+    fuel_type = 'Gasoline'
 
-# Truck inherits from Vehicle plus its own strong and integer values
-class Truck(Vehicle)
-	tow_rate = ' '
-	passenger_occupancy =
-	transmission = ' '
+# Car child class of Vehicle with additional attributes
+class Car(Vehicle):
+    engine_size = ' '
+    num_doors = ' '
 
-# Motorcycle inherets from vehicle plus its own string values
-class Motorcycle(Vehicle):
-	seat_height = ' '
-	color = ' '
+# Truck child class of Vehicle with additional attributes
+class Truck(Vehicle):
+    cab_style = 'Crew Cab'
+    bed_length = '5.5 feet'
+
+# instantiate truck type using print method
+truck = Truck()
+print(truck.make + ' ' + truck.generation + ' ' + truck.model + ' ' + truck.cab_style)
+
+    
