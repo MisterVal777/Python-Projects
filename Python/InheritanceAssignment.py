@@ -9,8 +9,8 @@ class Vehicle:
 
 # Car child class of Vehicle with additional attributes
 class Car(Vehicle):
-    engine_size = ' '
-    num_doors = ' '
+    engine_size = 'V-6 '
+    num_doors = '2'
 
 # Truck child class of Vehicle with additional attributes
 class Truck(Vehicle):
