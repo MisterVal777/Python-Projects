@@ -1,40 +1,68 @@
+#Parent Class Vancouver_Auto
+class Vancouver_Auto:
+    name = "Billy"
+    email = "Billy@vancouverAuto.com"
+    password = "54321go!"
 
-# Parent class vehicle
-class Vehicle:
-    make = 'Dodge'
-    model = 'Ram 2500'
-    generation = 'Gen 3'
-    color = 'Black'
-    fuel_type = 'Diesel'
+    def getSalesInfo(self):
+        entry_name = input("Enter your name: ")
+        entry_email = input("Enter your email: ")
+        entry_password = input("Enter your password: ")
+        if (entry_email == self.email and entry_password == self.password):
+            print("Welcome back, {}!".format(entry_name))
+        else:
+            print("The password or email is incorrect.")
 
-# instantiate print method for transportation
-transportation = Vehicle()
-print(transportation.make + ' ' + transportation.model + ' ' + transportation.color + ' ' + transportation.fuel_type)
+#Child Class Sales
+class Sales(Vancouver_Auto):
+    vehicle_vin = "lmno4567ip"
+    cost = 87000.00
+    department = "Used"
+    representative_pin= "3333"
 
-# Child class car
-class Car(Vehicle):
-    make = 'Toyota'
-    model = 'Camery'
-    engine_size = 'V-6 '
-    num_doors = '4 door'
+#This is the same method in the parent class "Vancouver_Auto".
+#The difference is that, instead of using entry_password, were using entry_pin.
 
-
-# instantiate print method for car type
-car = Car()
-print(car.make + ' ' + car.model + ' ' + car.color + ' ' + car.engine_size + ' ' + car.num_doors)
-
-# Child class truck
-class Truck(Vehicle):
-    make = 'Ford'
-    model = 'Raptor'
-    cab_style = 'Crew Cab'
-    bed_length = '5.5 feet'
+    def getSalesInfo(self):
+        entry_name = input("Enter your name: ")
+        entry_email = input("Enter you email: ")
+        entry_pin = input("Enter your pin: ")
+        if (entry_email == self.email and entry_pin == self.representative_pin):
+            print("Its a great day to sell a car, {}!".format(entry_name))
+        else:
+            print("The pin or email is incorrect.")
 
 
+#Child Class Service
+class Service(Vancouver_Auto):
+    vehicle_vin = "lmno4567ip"
+    department = "Service"
+    representative_pin= "3333"
+
+#This is the same method in the parent class "Vancouver_Auto".
+#The difference is that, instead of using entry_email, were using entry_department.
+
+    def getSalesInfo(self):
+        entry_name = input("Enter your name: ")
+        entry_department = input("Enter specific department: ")
+        entry_password = input("Enter your password: ")
+        if (entry_department == self.department and entry_password == self.password):
+            print("Its a great day to service a car, {}!".format(entry_name))
+        else:
+            print("The pin or department is incorrect.")
 
 
-# instantiate truck type using print method
-truck = Truck()
-print(truck.make + ' ' + truck.generation + ' ' + truck.model + ' ' + truck.color + ' ' + truck.cab_style)
+
+            
+
+#The following code invokes the methods inside each class for the User and Employee
 
     
+employee = Vancouver_Auto()
+employee.getSalesInfo()
+
+buy = Sales()
+buy.getSalesInfo()
+
+maintenance = Service()
+maintenance.getSalesInfo()
