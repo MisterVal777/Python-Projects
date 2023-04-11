@@ -71,18 +71,17 @@ class ParentWindow(Frame):
     #Creates function to transfer files from one directory to another
     def transferFiles(self):
         #Gets source directly
-        source = self.source_dir.get()
+        source = "C:\Python\fileTransfer\CustomerDestination\\"
         #Gets destination directory
-        destination = self.destination_dir.get()
+        destination = "C:\Python\fileTransfer\CustomerSource\\"
         #Gets a list of files in the source directory
-        source_files = os.listdir(source)
+        file_path = os.path.join(source, self)
         #Runs through each file in the source directory
-        source_files.get(source_files)
-
-        source_files_return = os.stat(source_files.get())
+        
+     
         
         for i in source_files:
-            modifyDate = datetime.fromtimestamp(os.source.getmtime(source_files_return))
+            modifyDate = datetime.fromtimestamp(os.path.getmtime(file_path))
             todaysDate = datetime.today()
 
             modifyDateLimit = modifyDate + timedelta(days = 1)
